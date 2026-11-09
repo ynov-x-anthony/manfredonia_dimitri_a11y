@@ -10,13 +10,8 @@ function App() {
 
   return (
     <div className="page">
+      <a href="#form" className="skip-link">Aller au formulaire</a>
       <h1>Paramètres du compte</h1>
-
-      {/* Problème 1 : un faux lien invisible, placé avant le vrai contenu,
-          capture le focus en premier à cause de son tabIndex positif. */}
-      <span tabIndex={1} className="decoy">·</span>
-
-      <a href="#form">Aller au formulaire</a>
 
       <form id="form" className="form">
         <label htmlFor="name">Nom</label>
