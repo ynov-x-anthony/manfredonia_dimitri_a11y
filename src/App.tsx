@@ -6,39 +6,40 @@ import './App.css'
 function App() {
   return (
     <div className="page">
-      <div className="header">
-        <div className="logo">DevBlog</div>
-        <div className="nav">
-          <div className="nav-link">Accueil</div>
-          <div className="nav-link">Articles</div>
-          <div className="nav-link">Contact</div>
-        </div>
-      </div>
+      <header className="header">
+        <a className="logo" href="/">DevBlog</a>
+        <nav className="nav" aria-label="Navigation principale">
+          <a className="nav-link" href="/">Accueil</a>
+          <a className="nav-link" href="/articles">Articles</a>
+          <a className="nav-link" href="/contact">Contact</a>
+        </nav>
+      </header>
 
-      <div className="main">
-        <div className="article">
-          <div className="title">Pourquoi apprendre TypeScript en 2026</div>
-          <div className="meta">Publié le 3 mars 2026</div>
-          <div className="small-title">Un typage qui rassure</div>
+      <main className="main">
+        <article className="article">
+          <h1 className="title">Pourquoi apprendre TypeScript en 2026</h1>
+          <p className="meta">Publié le 3 mars 2026</p>
+          <h2 className="small-title">Un typage qui rassure</h2>
           <p>TypeScript attrape une classe entière de bugs avant même d'exécuter le code...</p>
-          <div className="small-title">Un écosystème mature</div>
+          <h2 className="small-title">Un écosystème mature</h2>
           <p>La quasi-totalité des librairies JS fournissent désormais leurs types...</p>
-        </div>
+        </article>
 
-        <div className="like-btn" onClick={() => alert("Merci pour le like !")}>
+        <button className="like-btn" type="button" onClick={() => alert("Merci pour le like !")}>
           👍 J'aime cet article
-        </div>
+        </button>
 
-        <div className="newsletter">
-          <div className="small-title">Reste informé</div>
-          <input type="email" placeholder="ton@email.fr" />
-          <div className="submit-btn" onClick={() => alert('Inscription envoyée')}>
+        <section className="newsletter" aria-labelledby="newsletter-title">
+          <h2 id="newsletter-title" className="small-title">Reste informé</h2>
+          <label htmlFor="newsletter-email">Ton adresse e-mail</label>
+          <input id="newsletter-email" type="email" placeholder="ton@email.fr" />
+          <button className="submit-btn" type="button" onClick={() => alert('Inscription envoyée')}>
             S'inscrire
-          </div>
-        </div>
-      </div>
+          </button>
+        </section>
+      </main>
 
-      <div className="footer">© 2026 DevBlog</div>
+      <footer className="footer">© 2026 DevBlog</footer>
     </div>
   )
 }
